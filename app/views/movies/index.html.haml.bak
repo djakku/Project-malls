@@ -1,0 +1,18 @@
+%h1 Shopping Malls
+%background{:src => "/images/1.jpeg"}
+%table
+  %thead
+    %tr
+      %th Mall Name
+      %th Mall Rating
+      %th Estblished Since
+      %th More info
+    %tbody
+      -@movies.each do |movie|
+        %tr{:class => ('Good' unless movie.rating =~ /^G|PG$/)}
+          %td= movie.title
+          %td= movie.rating
+          %td= movie.release_date
+          %td= link_to "More about #{movie.title}", movie_path(movie)
+= link_to 'Add a New Shopping Mall', new_movie_path
+       

@@ -1,0 +1,16 @@
+%h1 All reviews
+%table#reviews
+  %thead
+    %tr
+      %th Shopping Mall
+      %th Shopping 
+      %th Shopping Mat
+      %th Comments
+    %tbody
+      -@reviews.each do |review|
+        %tr
+          %td= review.movie
+          %td= review.moviegoer
+          %td= review.potatoes
+          %td= review.comments
+       

@@ -1,0 +1,12 @@
+- unless @movie.errors.empty?
+  #warning
+    Errors prevented this Mall from being #{controller.action_name}d:
+    %ul
+      - @movie.errors.full_messages.each do |error|
+        %li= error  
+= label :movie, :title, 'Shopping Mall'
+= text_field :movie, :title
+= label :movie, :rating, 'Mall Rating'
+= select :movie, :rating, Movie.all_ratings
+= label :movie, :release_date, 'Estrablished on'
+= date_select :movie, :release_date, start_year: 1925
